@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widht=devide-widht, initial-scale=1.0">
+    <title>Projeto Travel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Viagens</a>
+        <div class="menubtn"></div>
+        <div class="navegacao">
+            <div class="navegacao-item">
+                <a href="#">Home</a>
+                <a href="#">Sobre</a>
+                <a href="#">Explore</a>
+                <a href="#">Galeria</a>
+                <a href="#">Contato</a>
+            </div>
+        </div>
+    </header>
+    <section class="home">
+        <video class="video-slider active" src="img/island.mp4" autoplay muted loop></video>
+        <video class="video-slider" src="img/adventure.mp4" autoplay muted loop></video>
+        <video class="video-slider" src="img/camp.mp4" autoplay muted loop></video>
+        <video class="video-slider" src="img/video11.mp4" autoplay muted loop></video>
+        <video class="video-slider" src="img/moto.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Ilha <span>Maravilhosa</span></h1>
+            <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain</p>
+            <a href="#">SAIBA MAIS</a>
+        </div>
+
+        <div class="content">
+            <h1>Aventuras <span>Radicais</span></h1>
+            <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain</p>
+            <a href="#">SAIBA MAIS</a>
+        </div>
+
+        <div class="content">
+            <h1>Trilhas & <span>Camping</span></h1>
+            <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain</p>
+            <a href="#">SAIBA MAIS</a>
+        </div>
+
+        <div class="content">
+            <h1>Navegue <span> pelo Mar</span></h1>
+            <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain</p>
+            <a href="#">SAIBA MAIS</a>
+        </div>
+
+        <div class="content">
+            <h1>Rotas <span>Incríveis</span></h1>
+            <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain</p>
+            <a href="#">SAIBA MAIS</a>
+        </div>
+        <div class="icones-midias">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navegacao">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+
+
+        </div>
+    </section>
+    <script type="text/javascript">
+        const menubtn = document.querySelector(".menubtn");
+        const navegacao = document.querySelector(".navegacao");
+
+        menubtn.addEventListener("click", () => {
+            menubtn.classList.toggle("active");
+            navegacao.classList.toggle("active");
+        });
+
+        //javascript para os slides do video
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slider");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+            slides.forEach((slides) => {
+                slides.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+            
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+</body>
+</html>
+    
